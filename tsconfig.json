@@ -34,6 +34,7 @@
 			"@config": ["./src/config"],
 			"@repositories": ["./src/repositories"],
 			"@schemas": ["./src/schemas"],
+			"@middlewares": ["./src/middlewares"],
 			"@ts": ["./src/ts"],
             "@models": ["./src/models"]
 		},
