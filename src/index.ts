@@ -1,18 +1,21 @@
-import express from 'express';
+import express  from 'express';
+import cors from 'cors';
+
+import { connect, environment } from './config';
+
+import routes from './routes';
 
 const app = express();
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(cors());
 
-interface RequestBody {
-  name: string;
-}
+app.use('/api', routes);
 
-app.post('/', (request, response) => {
-  const user = request.body as RequestBody;
+(async () => {
+  await connect();
 
-  return response.send({
-    message: `Hello ${user.name}`,
+  app.listen(environment.PORT, () => {
+    console.log(`Server started on port ${environment.PORT}!`);
   });
-});
-
-app.listen(3000, () => console.log('Estou funcionando'));
+})();
