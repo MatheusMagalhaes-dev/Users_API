@@ -1,19 +1,32 @@
-Alguns comandos para comecar:
-pnpm i express
-pnpm i typescript
-pnpm i eslint
-pnpm add -D @types/express
-pnpm add -D ts-node-dev
-pnpm add typescript
+Para começar esse projeto vamos precisar de alguns comandos essenciais para o node:
+
+É importante que o pnpm esteja instalado
+
+- pnpm i express
+- pnpm i typescript
+- pnpm i eslint
+- pnpm add -D @types/express
+- pnpm add -D ts-node-dev
+- pnpm add typescript
+- pnpm add -D @types/cors
+- pnpm i dotenv
+- pnpm i mongoose
+
 <h3>Para associar o banco ao back</h3>
-pnpm i dotenv
-criar o arquivo .env e buscar no mongoDB a porta e a url do database
-pnpm i mongoose
-criar a pasta config
-e os arquivos enviroment.ts e connection.ts
+Criar o arquivo .env e buscar no mongoDB a url do database, lembrando que a url
+vai ter um local onde colocar uma senha que deve ser gerada em database access.
+
+Criar a pasta config
+e os arquivos enviroment.ts e connection.ts.
+
 Esses dois arquivos serão a porta de entrada do banco na nossa aplicação.
-Criar a pasta ts, e mais dois arquivos, o index.ts e o user.interfaces.ts
+
+Criar a pasta ts, dentro delas mais duas pastas a interfaces e a types
+e criar dois arquivos, o index.ts, o user.interfaces.ts
 onde vamos codar o que sera necessario para preencher os dados do usuario.
+
+
+
 depois criaremos a pasta schemas e o arquivo user.schema.ts, para tratar 
 do banco de dados
 para isso precisaremos adicionar o ZOD entao
