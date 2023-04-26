@@ -87,3 +87,5 @@ UserController.delete('/:id', validate(deleteUserSchema), async (req, res) =>{
         console.error(error);
     }
 });
+
+export { UserController };
