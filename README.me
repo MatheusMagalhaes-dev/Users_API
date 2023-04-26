@@ -8,9 +8,11 @@ Para começar esse projeto vamos precisar de alguns comandos essenciais para o n
 - pnpm add -D @types/express
 - pnpm add -D ts-node-dev
 - pnpm add typescript
+- pnpm i cors
 - pnpm add -D @types/cors
 - pnpm i dotenv
 - pnpm i mongoose
+- pnpm i ZOD
 
 Para associar o banco ao back
 Criar o arquivo .env e buscar no mongoDB a url do database, lembrando que a url
@@ -25,13 +27,32 @@ Criar a pasta ts, dentro delas mais duas pastas a interfaces e a types
 e criar dois arquivos, o index.ts, o user.interfaces.ts
 onde vamos codar o que sera necessario para preencher os dados do usuario.
 
-
-
-depois criaremos a pasta schemas e o arquivo user.schema.ts, para tratar 
+Depois criaremos a pasta schemas e o arquivo user.schema.ts, para tratar 
 do banco de dados
-para isso precisaremos adicionar o ZOD entao
-pnpm i ZOD
+para isso precisaremos adicionar o ZOD que ja foi instalado acima
 os proximos passos sao criar as models e os repositorios para uso no banco.
-as middlewares vem para validações e erros,
+as middlewares vem para validações
+e entao podemos partir para a controller
+
+Criar a pasta controllers e os arquivos index.ts e user.controller.ts.
+Na controller que vamos passar todos os parametros para serem executados no banco
+como mostrar (get) os usuarios, criar novos (post) alterar os dados (pactch),
+alterar dado unico (put) e deletar o usuario (delete).
+
+para completar precisamos de mais dois arquivos criados na pasta raiz do projeto
+o routes.ts e o index.ts, esses dois são responsaveis pelas coneções, juntamente
+com o connect e o environment na pasta config.
+
+Diante disso os parametros passados para o arquivo routes, é a rota da controller.
+importaremos a controller e colocaremos ela com a rota /users.
+
+No index.ts nós usaremos o cors, que tambem ja foi instalado acima, precisamos
+instalar e adicionar os tipos do cors tambem. No caso do index referenciamos as routes,
+colocados no routes.ts, e importamos o connect e o environment para puxarmos todos
+os dados que preenchemos do banco, para entao estartamos o projeto, usando um codigo,
+proveniente do express que é o express.urlencode e o express.json, para fazer com que
+a api seja codificada como um projeto json.
+
+
 e entao podemos partir para a controller
 
